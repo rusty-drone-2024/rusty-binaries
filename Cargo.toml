@@ -1,0 +1,9 @@
+[package]
+name = "rusty-binaries"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+simulation_controller = { git = "https://github.com/rusty-drone-2024/simulation-controller", branch = "matteo-make-lib-again" }
+client_ui = { git = "https://github.com/rusty-drone-2024/matteo-contribution", branch = "make-gui-a-lib" }
+client_tui = { git = "https://github.com/rusty-drone-2024/picto_rust_client", branch = "matteo-make-lib" }
