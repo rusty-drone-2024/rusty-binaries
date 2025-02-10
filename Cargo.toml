@@ -14,20 +14,20 @@ client_ui = { git = "https://github.com/rusty-drone-2024/matteo-contribution" }
 client_tui = { git = "https://github.com/rusty-drone-2024/picto_rust_client", branch = "matteo-make-lib" }
 
 ## Server and client
-rusty_drones = { git = "https://github.com/rusty-drone-2024/rusty-drone" }
 matteo_contribution = { git = "https://github.com/rusty-drone-2024/matteo-contribution" }
 rusty-drones-servers = { git = "https://github.com/rusty-drone-2024/samuel-contribution"}
 client = { git = "https://github.com/rusty-drone-2024/picto_rust_client" }
 
 ## Bought drones
-#rustafarian-drone = { git = "https://github.com/Rustafarian-Unitn/rustafarian-drone" }
-#dr_ones = { git = "https://github.com/Dr-Ones/drone" }
-#fungi_drone = { git = "https://github.com/Fungi-B-D/Fungi-Drone" }
-#d-r-o-n-e_drone = { git = "https://github.com/AP-2024-25-D-R-O-N-E/drone" }
-#ap2024_unitn_cppenjoyers_drone = { git = "https://github.com/Cpp-enjoyers/drone" }
-#lockheedrustin-drone = { git = "https://github.com/Lockheed-Rustin/drone" }
-#LeDron_James = { git = "https://github.com/anass03/LeDron_James", default-features = false  }
-#bagel_bomber = { git = "https://github.com/daw-dev/bagel-bomber", default-features = false }
-#wg_2024-rust = { git = "https://github.com/LuigiMiazzo17/unitn-advancedProgramming-WGL_2024-drone" }
-#rustbusters-drone = { git = "https://github.com/Rustbusters/drone" }
+#rusty_drones = { git = "https://github.com/rusty-drone-2024/rusty-drone" }
+rustafarian-drone = { git = "https://github.com/Rustafarian-Unitn/rustafarian-drone" }
+dr_ones = { git = "https://github.com/Dr-Ones/drone" }
+fungi_drone = { git = "https://github.com/Fungi-B-D/Fungi-Drone" }
+d-r-o-n-e_drone = { git = "https://github.com/AP-2024-25-D-R-O-N-E/drone" }
+ap2024_unitn_cppenjoyers_drone = { git = "https://github.com/Cpp-enjoyers/drone" }
+lockheedrustin-drone = { git = "https://github.com/Lockheed-Rustin/drone" }
+LeDron_James = { git = "https://github.com/anass03/LeDron_James", default-features = false  }
+bagel_bomber = { git = "https://github.com/daw-dev/bagel-bomber", default-features = false }
+wg_2024-rust = { git = "https://github.com/LuigiMiazzo17/unitn-advancedProgramming-WGL_2024-drone" }
+rustbusters-drone = { git = "https://github.com/Rustbusters/drone" }
 
