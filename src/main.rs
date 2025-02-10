@@ -1,3 +1,4 @@
+#![warn(clippy::pedantic)]
 use network_initializer::factory::LeafImpl;
 use network_initializer::factory::DroneImpl;
 use client::Client as ChatClient;
@@ -10,7 +11,7 @@ use network_initializer::factory::DroneRunnable;
 use network_initializer::factory::LeafFactory;
 use network_initializer::factory::LeafRunnable;
 use network_initializer::{drone_factories, leaf_factories, NetworkInitializer};
-use rusty_drones::RustyDrone;
+//use rusty_drones::RustyDrone;
 use rusty_drones_servers::{ChatServer, MediaServer, TextServer};
 use simulation_controller::loop_forever_sc;
 use std::env;
