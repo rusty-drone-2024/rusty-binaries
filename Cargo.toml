@@ -11,7 +11,7 @@ network_initializer = { git = "https://github.com/rusty-drone-2024/network-initi
 ## "Processes"
 simulation_controller = { git = "https://github.com/rusty-drone-2024/simulation-controller" }
 client_ui = { git = "https://github.com/rusty-drone-2024/matteo-contribution" }
-client_tui = { git = "https://github.com/rusty-drone-2024/picto_rust_client", branch = "matteo-make-lib" }
+client_tui = { git = "https://github.com/rusty-drone-2024/picto_rust_client" }
 
 ## Server and client
 matteo_contribution = { git = "https://github.com/rusty-drone-2024/matteo-contribution" }
