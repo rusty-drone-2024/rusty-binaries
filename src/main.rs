@@ -58,16 +58,16 @@ fn start_simulation() {
     );
 
     let client_factories = leaf_factories!(
-        mc::TextMediaClient, "Di Noia Media Client",
-        ChatClient, "Sant'Ana Chat Client",
-        ChatClient, "Sant'Ana Chat Client",
+        mc::TextMediaClient, "Di Noia Media",
+        ChatClient, "Casarotto Chat",
+        ChatClient, "Casarotto Chat",
     );
     let server_factories = leaf_factories!(
-        mc::TextServer, "Di Noia Text Server",
-        mc::MediaServer, "Di Noia Text Server",
-        TextServer, "Mens Text Server",
-        MediaServer, "Mens Media Server",
-        ChatServer, "Mens Chat Server",
+        mc::TextServer, "Di Noia Text",
+        mc::MediaServer, "Di Noia Text",
+        TextServer, "Mens Text",
+        MediaServer, "Mens Media",
+        ChatServer, "Mens Chat",
     );
 
     let net = NetworkInitializer::initialize_network_with_implementation(
