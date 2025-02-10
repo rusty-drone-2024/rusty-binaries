@@ -1,6 +1,6 @@
 [[drone]]
 id = 1
-connected_node_ids = [3, 8, 12, 14, 15]
+connected_node_ids = [3, 8, 12] # removed 14, 15
 pdr = 0.05
 
 [[drone]]
@@ -20,7 +20,7 @@ pdr = 0.28
 
 [[drone]]
 id = 5
-connected_node_ids = [3, 8, 11, 14, 15]
+connected_node_ids = [3, 8, 11] # removed 14, 15
 pdr = 0.0
 
 [[drone]]
