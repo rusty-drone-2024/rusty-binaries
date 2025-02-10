@@ -1,8 +1,14 @@
 #![warn(clippy::pedantic)]
+use ap2024_unitn_cppenjoyers_drone::CppEnjoyersDrone;
+use bagel_bomber::BagelBomber;
 use client::Client as ChatClient;
 use client_tui::loop_forever_chat_tui;
 use client_ui::loop_forever_media_gui;
 use common_structs::leaf::Leaf;
+use d_r_o_n_e_drone::MyDrone as DRONEDrone;
+use dr_ones::Drone as DrOnes;
+use fungi_drone::FungiDrone;
+use lockheedrustin_drone::LockheedRustin;
 use matteo_contribution as mc;
 use network_initializer::factory::DroneFactory;
 use network_initializer::factory::DroneImpl;
@@ -10,14 +16,8 @@ use network_initializer::factory::DroneRunnable;
 use network_initializer::factory::LeafFactory;
 use network_initializer::factory::LeafImpl;
 use network_initializer::factory::LeafRunnable;
+use network_initializer::network::Network;
 use network_initializer::{drone_factories, leaf_factories, NetworkInitializer};
-//use rusty_drones::RustyDrone;
-use ap2024_unitn_cppenjoyers_drone::CppEnjoyersDrone;
-use bagel_bomber::BagelBomber;
-use d_r_o_n_e_drone::MyDrone as DRONEDrone;
-use dr_ones::Drone as DrOnes;
-use fungi_drone::FungiDrone;
-use lockheedrustin_drone::LockheedRustin;
 use rustafarian_drone::RustafarianDrone;
 use rustbusters_drone::RustBustersDrone;
 use rusty_drones_servers::{ChatServer, MediaServer, TextServer};
@@ -38,12 +38,18 @@ fn main() {
         Some(bin) if bin == "chat-tui" => {
             let _ = loop_forever_chat_tui(extra.expect("A port was not passed"));
         }
-        _ => start_simulation(),
+        _ => match create_network() {
+            Ok(net) => loop_forever_sc(net),
+            Err(error) => eprintln!("FATAL: {error}"),
+        },
     }
 }
 
-fn start_simulation() {
-    //let drone_factories = drone_factories!(RustyDrone, "RustyDrones");
+/// Create the network with base parameters
+/// # Errors
+/// If the network given is invalid or if any other
+/// fatal error during the NI initialization is found.
+fn create_network() -> Result<Network, String> {
     let drone_factories = drone_factories!(
         RustafarianDrone,
         "Rustafarian",
@@ -88,12 +94,10 @@ fn start_simulation() {
         "Mens Chat",
     );
 
-    let net = NetworkInitializer::initialize_network_with_implementation(
+    NetworkInitializer::start_network(
         "config.toml",
         drone_factories,
         client_factories,
         server_factories,
-    );
-
-    loop_forever_sc(net);
+    )
 }
