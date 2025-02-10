@@ -74,12 +74,11 @@ fn create_network() -> Result<Network, String> {
     );
 
     let client_factories = leaf_factories!(
+        // At first so it is spawned twice if three client are created
+        ChatClient,
+        "Casarotto Chat",
         mc::TextMediaClient,
         "Di Noia Media",
-        ChatClient,
-        "Casarotto Chat",
-        ChatClient,
-        "Casarotto Chat",
     );
     let server_factories = leaf_factories!(
         mc::TextServer,
