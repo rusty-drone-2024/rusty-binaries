@@ -57,10 +57,10 @@ connected_drone_ids = [1, 7]
 id = 13
 connected_drone_ids = [2, 4]
 
-[[client]]
-id = 14
-connected_drone_ids = [1, 5]
+#[[client]]
+#id = 14
+#connected_drone_ids = [1, 5]
 
-[[client]]
-id = 15
-connected_drone_ids = [1, 5]
+#[[client]]
+#id = 15
+#connected_drone_ids = [1, 5]
