@@ -1,3 +1,5 @@
+use network_initializer::factory::LeafImpl;
+use network_initializer::factory::DroneImpl;
 use client::Client as ChatClient;
 use client_tui::loop_forever_chat_tui;
 use client_ui::loop_forever_media_gui;
@@ -12,7 +14,17 @@ use rusty_drones::RustyDrone;
 use rusty_drones_servers::{ChatServer, MediaServer, TextServer};
 use simulation_controller::loop_forever_sc;
 use std::env;
+use ap2024_unitn_cppenjoyers_drone::CppEnjoyersDrone;
+use bagel_bomber::BagelBomber;
+use fungi_drone::FungiDrone;
+use lockheedrustin_drone::LockheedRustin;
+use rustafarian_drone::RustafarianDrone;
+use rustbusters_drone::RustBustersDrone;
 use wg_2024::drone::Drone;
+use wg_2024_rust::drone::RustDrone;
+use LeDron_James::Drone as LeDronJames;
+use d_r_o_n_e_drone::MyDrone as DRONEDrone;
+use dr_ones::Drone as DrOnes;
 
 fn main() {
     let bin = env::args().nth(1);
@@ -20,37 +32,41 @@ fn main() {
 
     match bin {
         Some(bin) if bin == "media-gui" => {
-            loop_forever_media_gui(extra.expect("NEED addr"));
+            loop_forever_media_gui(extra.expect("An address was not passed"));
         }
         Some(bin) if bin == "chat-tui" => {
-            let _ = loop_forever_chat_tui(extra.expect("NEED port"));
+            let _ = loop_forever_chat_tui(extra.expect("A port was not passed"));
         }
         _ => start_simulation(),
     }
 }
 
 fn start_simulation() {
-    let drone_factories = drone_factories!(RustyDrone);
-    /*let drone_factories = drone_factories!(
-        RustafarianDrone,
-        DrOnes,
-        FungiDrone,
-        DRONEDrone,
-        CppEnjoyersDrone,
-        LockheedRustin,
-        LeDronJames,
-        BagelBomber,
-        RustDrone,
-        RustBustersDrone
-    );*/
+    //let drone_factories = drone_factories!(RustyDrone, "RustyDrones");
+    let drone_factories = drone_factories!(
+        RustafarianDrone, "Rustafarian",
+        DrOnes, "Dr-Ones",
+        FungiDrone, "Fungi",
+        DRONEDrone, "D-R-O-N-E",
+        CppEnjoyersDrone, "Cpp Enjoyers",
+        LockheedRustin, "Lockheed Rustin",
+        LeDronJames, "LeDron James",
+        BagelBomber, "Bagel Bomber",
+        RustDrone, "Rust",
+        RustBustersDrone, "Rust Busters",
+    );
 
-    let client_factories = leaf_factories!(mc::TextMediaClient, ChatClient, ChatClient);
+    let client_factories = leaf_factories!(
+        mc::TextMediaClient, "Di Noia Media Client",
+        ChatClient, "Sant'Ana Chat Client",
+        ChatClient, "Sant'Ana Chat Client",
+    );
     let server_factories = leaf_factories!(
-        mc::TextServer,
-        mc::MediaServer,
-        TextServer,
-        MediaServer,
-        ChatServer,
+        mc::TextServer, "Di Noia Text Server",
+        mc::MediaServer, "Di Noia Text Server",
+        TextServer, "Mens Text Server",
+        MediaServer, "Mens Media Server",
+        ChatServer, "Mens Chat Server",
     );
 
     let net = NetworkInitializer::initialize_network_with_implementation(
