@@ -9,7 +9,7 @@ common_structs = { git = "https://github.com/rusty-drone-2024/common-structs" }
 network_initializer = { git = "https://github.com/rusty-drone-2024/network-initializer" }
 
 ## "Processes"
-simulation_controller = { git = "https://github.com/rusty-drone-2024/simulation-controller", branch = "import" }
+simulation_controller = { git = "https://github.com/rusty-drone-2024/simulation-controller" }
 client_ui = { git = "https://github.com/rusty-drone-2024/matteo-contribution" }
 client_tui = { git = "https://github.com/rusty-drone-2024/picto_rust_client" }
 
@@ -19,7 +19,6 @@ rusty-drones-servers = { git = "https://github.com/rusty-drone-2024/samuel-contr
 client = { git = "https://github.com/rusty-drone-2024/picto_rust_client" }
 
 ## Bought drones
-#rusty_drones = { git = "https://github.com/rusty-drone-2024/rusty-drone" }
 rustafarian-drone = { git = "https://github.com/Rustafarian-Unitn/rustafarian-drone" }
 dr_ones = { git = "https://github.com/Dr-Ones/drone" }
 fungi_drone = { git = "https://github.com/Fungi-B-D/Fungi-Drone" }
