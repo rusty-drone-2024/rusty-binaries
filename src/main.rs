@@ -84,7 +84,7 @@ fn create_network() -> Result<Network, String> {
         mc::TextServer,
         "Di Noia Text",
         mc::MediaServer,
-        "Di Noia Text",
+        "Di Noia Media",
         TextServer,
         "Mens Text",
         MediaServer,
